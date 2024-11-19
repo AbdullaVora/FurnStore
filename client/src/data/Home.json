@@ -1,0 +1,206 @@
+{
+    "galleryImage": [
+        {
+            "img": "/images/new-plant.webp",
+            "title_1": "New",
+            "title_2": "Plants"
+        },
+        {
+            "img": "/images/chain-lamp.webp",
+            "title_1": "Chain",
+            "title_2": "Lamp"
+        },
+        {
+            "img": "/images/chair.webp",
+            "title_1": "New",
+            "title_2": "Chair"
+        }
+    ],
+    "policy": [
+        {
+            "title": "Extra Shipping"
+        },
+        {
+            "title": "Return Policy"
+        },
+        {
+            "title": "Payment Secured"
+        },
+        {
+            "title": "Money Back Guarantee"
+        }
+    ],
+    "mainArrival": [
+        {
+            "img": "/images/arrival_1.webp"
+        },
+        {
+            "img": "/images/arrival_1_2.webp"
+        },
+        {
+            "img": "/images/arrival_1_3.webp"
+        }
+    ],
+    "arrival": [
+        {
+            "img": "/images/arrival_2_1.avif",
+            "title": "Fiamond Halo Stud"
+        },
+        {
+            "img": "/images/arrival_2_2.jpg",
+            "title": "Diamond Halo Stud Dolor"
+        },
+        {
+            "img": "/images/arrival_2_3.jpg",
+            "title": "Diamond Halo Stud Amet"
+        },
+        {
+            "img": "/images/arrival_2_4.jpg",
+            "title": "Ciamond Halo Stud Cum"
+        },
+        {
+            "img": "/images/arrival_2_5.jpg",
+            "title": "Acamond Halo Stud Conse"
+        },
+        {
+            "img": "/images/arrival_2_6.jpg",
+            "title": "Diamond Halo Stud Cum"
+        },
+        {
+            "img": "/images/arrival_2_7.jpg",
+            "title": "Diamond Halo Stud Aenean"
+        },
+        {
+            "img": "/images/arrival_2_8.jpg",
+            "title": "Biamond Halo Stud Aenean"
+        }
+    ],
+    "gallery_2": [
+        {
+            "img": "/images/gallery_2_1.webp",
+            "title": "HANGING LIGHT"
+        },
+        {
+            "img": "/images/gallery_2_2.webp",
+            "title": "SIDE TABLE"
+        }
+    ],
+    "product": [
+        {
+            "img": "/images/product_1.jpg",
+            "title": "Diamond Halo Stud Sociss"
+        },
+        {
+            "img": "/images/product_2.jpg",
+            "title": "Diamond Halo Stud Magins"
+        },
+        {
+            "img": "/images/product_3.jpg",
+            "title": "Diamond Halo Stud Quis"
+        },
+        {
+            "img": "/images/product_4.jpg",
+            "title": "Diamond Halo Stud Massa"
+        }
+    ],
+    "flashDeals": [
+        {
+            "img": "/images/flash_1.jpg",
+            "title": "Acamode Halo Stud Conse"
+        },
+        {
+            "img": "/images/flash_2.jpg",
+            "title": "Diamond Halo Stud Donece"
+        },
+        {
+            "img": "/images/flash_3.jpg",
+            "title": "Acamode Halo Stud Monte"
+        },
+        {
+            "img": "/images/flash_4.jpg",
+            "title": "Acamode Halo Stud Conse"
+        },
+        {
+            "img": "/images/flash_5.jpg",
+            "title": "Acamode Halo Stud Donec"
+        },
+        {
+            "img": "/images/flash_6.jpg",
+            "title": "Acamode Halo Stud Conse"
+        }
+    ],
+    "news": [
+        {
+            "img": "/images/news_1.webp",
+            "title": "Aliquam vitae maximus justo"
+        },
+        {
+            "img": "/images/news_2.jpg",
+            "title": "Pellensque nunc condentum"
+        },
+        {
+            "img": "/images/news_3.jpg",
+            "title": "Proin tincidunt ipsum nec"
+        },
+        {
+            "img": "/images/news_4.jpg",
+            "title": "Quisque dictum leo venenatis"
+        },
+        {
+            "img": "/images/news_5.jpg",
+            "title": "Consectetur adipiscing elit"
+        }
+    ],
+    "gram": [
+        {
+            "img": "/images/gram_1.png"
+        },
+        {
+            "img": "/images/gram_2.png"
+        },
+        {
+            "img": "/images/gram_3.png"
+        },
+        {
+            "img": "/images/gram_4.png"
+        },
+        {
+            "img": "/images/gram_5.png"
+        },
+        {
+            "img": "/images/gram_6.png"
+        }
+    ],
+    "testimonials": [
+        {
+            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque ipsum, quae expedita voluptatem exercitationem",
+            "author": "John Doe",
+            "img": "/images/testimonial_1.png"
+        },
+        {
+            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque ipsum, quae expedita voluptatem exercitationem",
+            "author": "Jane Smith",
+            "img": "/images/testimonial_2.png"
+        },
+        {
+            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque ipsum, quae expedita voluptatem exercitationem",
+            "author": "Alice Johnson",
+            "img": "/images/testimonial_3.png"
+        },
+        {
+            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque ipsum, quae expedita voluptatem exercitationem",
+            "author": "Alice Johnson",
+            "img": "/images/testimonial_1.png"
+        },
+        {
+            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque ipsum, quae expedita voluptatem exercitationem",
+            "author": "Alice Johnson",
+            "img": "/images/testimonial_2.png"
+        },
+        {
+            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque ipsum, quae expedita voluptatem exercitationem",
+            "author": "Alice Johnson",
+            "img": "/images/testimonial_3.png"
+        }
+    ]
+}
