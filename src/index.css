@@ -450,6 +450,60 @@ footer .icon:hover {
   background-color: lightgray;
 }
 
+.detail-btn-1 {
+  background-color: var(--secondary-color);
+  color: white;
+  transition: background-color 0.3s ease-out;
+  border: 2px solid var(--secondary-color);
+}
+
+.detail-btn-1:hover {
+  background-color: transparent;
+  color: var(--secondary-color);
+}
+
+.detail-btn-2 {
+  background-color: transparent;
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}
+
+.detail-btn-2:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.other-details .policy li {
+  position: relative;
+  cursor: pointer;
+}
+
+.other-details .policy li::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  bottom: -105%;
+  left: 0;
+  transition: width 0.2s ease-in-out;
+}
+
+.other-details .policy li:hover::after {
+  width: 100%;
+}
+
+.other-details .policy .active-tab::before {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  bottom: -105%;
+  left: 0;
+}
+
+
 /* ************************************ Product Detail Page Style End ********************************** */
 
 /* ************************************ contact us Page Style start ********************************** */
@@ -483,21 +537,21 @@ textarea::placeholder {
 /* ************************************ contact us Page Style End ********************************** */
 
 /* ************************************ login Style start ********************************** */
-.login form input::placeholder{
+.login form input::placeholder {
   font-size: 10px;
   opacity: 60%;
   font-weight: bold;
 }
 
-.login .greenHover:hover{
+.login .greenHover:hover {
   color: var(--secondary-color);
 }
 
-.login button{
+.login button {
   background-color: var(--secondary-color);
 }
 
-.login button:hover{
+.login button:hover {
   background-color: #083e21;
 }
 

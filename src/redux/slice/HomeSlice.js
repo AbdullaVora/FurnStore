@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 import Home from "../../data/Home";
-
+    
 const initialState = {
     Home: Home
 }
