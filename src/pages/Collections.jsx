@@ -3,7 +3,7 @@ import { HiMiniAdjustmentsHorizontal } from "react-icons/hi2";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FaAngleDown } from "react-icons/fa6";
 import { useSelector } from 'react-redux';
-import ArrivalCard from '../components/arrivalCard';
+import ArrivalCard from '../components/ArrivalCard';
 import DropDown from '../components/DropDown';
 
 const Collections = () => {
