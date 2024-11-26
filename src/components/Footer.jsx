@@ -18,8 +18,8 @@ const Footer = () => {
                             <div className="logo">
                                 <img src="/images/Logo.webp" alt="Logo" className='img-fluid' width={200} />
                             </div>
-                            {footer.map((foot) => (
-                                <div className="location mt-3 d-flex align-items-center">
+                            {footer.map((foot, index) => (
+                                <div key={index} className="location mt-3 d-flex align-items-center">
                                     {foot.logo}
                                     <span className='opacity-75 ps-3'>{foot.title}</span>
                                 </div>

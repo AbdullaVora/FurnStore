@@ -10,8 +10,8 @@ const Blog = () => {
             <h2 className='text-center fw-bolder display-5 mt-5'>BLOGS</h2>
             <div className="container">
                 {
-                    Blog.map((blog) => (
-                        <BlogCard img={blog.img} title={blog.title} date={blog.date} author={blog.author} summary={blog.summary} />
+                    Blog.map((blog, index) => (
+                        <BlogCard key={index} img={blog.img} title={blog.title} date={blog.date} author={blog.author} summary={blog.summary} />
                     ))
                 }
             </div>

@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import AOS from 'aos'
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -61,8 +60,8 @@ const Home = () => {
         <div className="container">
           <div className="img-group d-flex">
             {
-              galleryImage.map((img) => (
-                <GalleryBox img={img.img} title_1={img.title_1} title_2={img.title_2} />
+              galleryImage.map((img, index) => (
+                <GalleryBox key={index} img={img.img} title_1={img.title_1} title_2={img.title_2} />
               ))
             }
           </div>
@@ -75,7 +74,7 @@ const Home = () => {
         <div className="container">
           <div className="d-flex">
             {policy.map((card, key) => (
-              < PolicyCard img={`/images/policy_${key + 1}.webp`} title={card.title} />
+              < PolicyCard key={key} img={`/images/policy_${key + 1}.webp`} title={card.title} />
             ))}
           </div>
         </div>
@@ -92,8 +91,8 @@ const Home = () => {
             </div>
             <div className="sideCards col-8 d-flex flex-wrap">
               {
-                arrival.map((card) => (
-                  <ArrivalCard img={card.img} title={card.title} />
+                arrival.map((card, index) => (
+                  <ArrivalCard key={index} img={card.img} title={card.title} />
                 ))
               }
             </div>
@@ -106,8 +105,8 @@ const Home = () => {
       <div className="gallery_2 py-5 mt-5" data-aos="fade-left">
         <div className="container">
           <div className="gallery_2Box d-flex">
-            {gallery_2.map((box) => (
-              <GalleryBox_2 img={box.img} title={box.title} />
+            {gallery_2.map((box, index) => (
+              <GalleryBox_2 key={index} img={box.img} title={box.title} />
             ))}
           </div>
         </div>
@@ -127,8 +126,8 @@ const Home = () => {
           </nav>
           <div className="product-cards d-flex flex-row flex-wrap">
             <div className="rightCards d-flex flex-wrap col-4 justify-content-evenly">
-              {product.map((card) => (
-                <OurProductBox img={card.img} title={card.title} />
+              {product.map((card, index) => (
+                <OurProductBox key={index} img={card.img} title={card.title} />
               ))}
             </div>
             <div className="centerCard col-4" data-aos="zoom-in">
@@ -136,8 +135,8 @@ const Home = () => {
               <button className='bg-transparent py-2 px-5 position-absolute start-50 translate-middle-x'>View All</button>
             </div>
             <div className="LeftCards d-flex flex-wrap col-4 justify-content-evenly">
-              {product.map((card) => (
-                <OurProductBox img={card.img} title={card.title} />
+              {product.map((card, index) => (
+                <OurProductBox key={index} img={card.img} title={card.title} />
               ))}
             </div>
           </div>
