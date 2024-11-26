@@ -11,7 +11,7 @@ import 'swiper/css/effect-fade';
 
 import GalleryBox from '../components/GalleryBox';
 import PolicyCard from '../components/PolicyCard';
-import ArrivalCard from '../components/arrivalCard';
+import ArrivalCard from '../components/ArrivalCard';
 import GalleryBox_2 from '../components/GalleryBox_2';
 import OurProductBox from '../components/OurProductBox';
 import TestiminoalBox from '../components/TestiminoalBox';
@@ -19,6 +19,7 @@ import FlahCard from '../components/FlahCard';
 import LatestNews from '../components/LatestNews';
 import GramGallery from '../components/GramGallery';
 import Footer from '../components/Footer';
+import { useEffect } from 'react';
 
 const Home = () => {
 
