@@ -1,6 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../public/images/Logo.webp"
 const SideBar = ({ openSlide, closeSideBar }) => {
+    const name = localStorage.getItem('user');
+    const navigate = useNavigate()
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        closeSideBar();
+    }
+
     return (
         <div className="sidebar">
             <div
@@ -20,7 +29,7 @@ const SideBar = ({ openSlide, closeSideBar }) => {
                     className="img-fluid position-absolute start-50 translate-middle-x"
                     style={{ top: '8%', width: '50%' }}
                 />
-                <div className="blank">&nbsp;&nbsp;&nbsp;</div>
+                <div className="align-self-center"><span className="fs-2 fw-semibold">{name ? name : ''}</span></div>
                 <ul type="none" className="border-bottom w-100 ms-0 ps-4">
                     <Link to="/login" className="text-decoration-none text-black" onClick={closeSideBar}>
                         <li className="fs-5 py-3">Login</li>
@@ -30,6 +39,7 @@ const SideBar = ({ openSlide, closeSideBar }) => {
                     </Link>
                     <li className="fs-5 py-3">Wishlist</li>
                     <li className="fs-5 py-3">Check out</li>
+                    <li className="fs-5 py-3" onClick={handleLogout}>Log Out</li>
                 </ul>
                 <span className="px-4 fw-semibold d-block mb-2">CURRENCY</span>
                 <select
