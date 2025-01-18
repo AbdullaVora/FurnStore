@@ -11,6 +11,7 @@ import ContactUs from './pages/ContactUs';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import WishList from './pages/WishList';
+import CartPage from './pages/CartPage';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/wishlist' element={<WishList />} />
+          <Route path='/cart' element={<CartPage />} />
         </Routes>
       </BrowserRouter>
     </>

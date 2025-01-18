@@ -1,34 +1,42 @@
 {
     "product": [
         {
+            "id": 101,
             "img": "/images/collection_1.jpg",
             "title": "Fiamond Halo Stud"
         },
         {
+            "id": 102,
             "img": "/images/arrival_2_2.jpg",
             "title": "Diamond Halo Stud Dolor"
         },
         {
+            "id": 103,
             "img": "/images/arrival_2_3.jpg",
             "title": "Diamond Halo Stud Amet"
         },
         {
+            "id": 104,
             "img": "/images/arrival_2_4.jpg",
             "title": "Ciamond Halo Stud Cum"
         },
         {
+            "id": 105,
             "img": "/images/arrival_2_5.jpg",
             "title": "Acamond Halo Stud Conse"
         },
         {
+            "id": 106,
             "img": "/images/arrival_2_6.jpg",
             "title": "Diamond Halo Stud Cum"
         },
         {
+            "id": 107,
             "img": "/images/arrival_2_7.jpg",
             "title": "Diamond Halo Stud Aenean"
         },
         {
+            "id": 108,
             "img": "/images/arrival_2_8.jpg",
             "title": "Biamond Halo Stud Aenean"
         }

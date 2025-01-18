@@ -63,7 +63,7 @@ const Collections = () => {
                 <div className="container">
                     <div className="cards d-flex flex-wrap justify-content-between">
                         {product.map((card, index) => (
-                            <ArrivalCard key={index} img={card.img} title={card.title} isCollection={collection} />
+                            <ArrivalCard key={index} img={card.img} id={card.id} title={card.title} isCollection={collection} />
                         ))
                         }
                     </div>

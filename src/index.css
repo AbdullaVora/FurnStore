@@ -547,12 +547,28 @@ textarea::placeholder {
   color: var(--secondary-color);
 }
 
-.login button {
+.login button,
+.Cartbar button {
   background-color: var(--secondary-color);
 }
 
-.login button:hover {
+.login button:hover,
+.Cartbar button:hover {
   background-color: #083e21;
 }
 
 /* ************************************ login Style end ********************************** */
+
+/* ************************************ cart Style start ********************************** */
+.cartbtn {
+  background-color: transparent !important;
+  border: 2px solid var(--secondary-color);
+  color: #000;
+}
+
+.cartbtn:hover {
+  background-color: var(--secondary-color) !important;
+  color: white;
+}
+
+/* ************************************ cart Style end ********************************** */
