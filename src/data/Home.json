@@ -43,36 +43,52 @@
     ],
     "arrival": [
         {
+            "id": 101,
             "img": "/images/arrival_2_1.avif",
-            "title": "Fiamond Halo Stud"
+            "title": "Fiamond Halo Stud",
+            "price": 299
         },
         {
+            "id": 102,
             "img": "/images/arrival_2_2.jpg",
-            "title": "Diamond Halo Stud Dolor"
+            "title": "Diamond Halo Stud Dolor",
+            "price": 499
         },
         {
+            "id": 103,
             "img": "/images/arrival_2_3.jpg",
-            "title": "Diamond Halo Stud Amet"
+            "title": "Diamond Halo Stud Amet",
+            "price": 399
         },
         {
+            "id": 104,
             "img": "/images/arrival_2_4.jpg",
-            "title": "Ciamond Halo Stud Cum"
+            "title": "Ciamond Halo Stud Cum",
+            "price": 599
         },
         {
+            "id": 105,
             "img": "/images/arrival_2_5.jpg",
-            "title": "Acamond Halo Stud Conse"
+            "title": "Acamond Halo Stud Conse",
+            "price": 699
         },
         {
+            "id": 106,
             "img": "/images/arrival_2_6.jpg",
-            "title": "Diamond Halo Stud Cum"
+            "title": "Diamond Halo Stud Cum",
+            "price": 799
         },
         {
+            "id": 107,
             "img": "/images/arrival_2_7.jpg",
-            "title": "Diamond Halo Stud Aenean"
+            "title": "Diamond Halo Stud Aenean",
+            "price": 399
         },
         {
+            "id": 108,
             "img": "/images/arrival_2_8.jpg",
-            "title": "Biamond Halo Stud Aenean"
+            "title": "Biamond Halo Stud Aenean",
+            "price": 899
         }
     ],
     "gallery_2": [
@@ -86,19 +102,19 @@
         }
     ],
     "product": [
-        {
+        {   "id": 118,
             "img": "/images/product_1.jpg",
             "title": "Diamond Halo Stud Sociss"
         },
-        {
+        {   "id": 119,
             "img": "/images/product_2.jpg",
             "title": "Diamond Halo Stud Magins"
         },
-        {
+        {   "id": 120,
             "img": "/images/product_3.jpg",
             "title": "Diamond Halo Stud Quis"
         },
-        {
+        {   "id": 121,
             "img": "/images/product_4.jpg",
             "title": "Diamond Halo Stud Massa"
         }

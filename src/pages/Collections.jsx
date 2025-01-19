@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HiMiniAdjustmentsHorizontal } from "react-icons/hi2";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FaAngleDown } from "react-icons/fa6";
@@ -11,7 +11,14 @@ const Collections = () => {
     const [isDropdownVisible, setDropdownVisible] = useState(false);
 
     const data = useSelector((state) => state.Collection.Collection);
-    const { product } = data;
+
+    const [product, setProductData] = useState()
+
+    useEffect(() => {
+        if (data)
+            setProductData(data.product)
+    }, [data])
+
     console.log(product);
 
     const DropdownEnter = () => { setDropdownVisible(true) };
@@ -62,8 +69,10 @@ const Collections = () => {
             <div className="collectionCard">
                 <div className="container">
                     <div className="cards d-flex flex-wrap justify-content-between">
-                        {product.map((card, index) => (
-                            <ArrivalCard key={index} img={card.img} id={card.id} title={card.title} isCollection={collection} />
+                        {product?.map((card, index) => (
+                            <>
+                                <ArrivalCard key={index} img={card.img} id={card.id} title={card.title} price={card.price} isCollection={collection} />
+                            </>
                         ))
                         }
                     </div>

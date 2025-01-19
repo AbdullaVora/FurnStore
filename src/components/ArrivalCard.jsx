@@ -4,7 +4,7 @@ import { RiStarSmileLine } from "react-icons/ri";
 import { useDispatch } from 'react-redux';
 import { addProductToCart } from '../redux/slice/CollectionSlice';
 
-const ArrivalCard = ({ id ,img, title, isCollection }) => {
+const ArrivalCard = ({ id, img, title, price, isCollection }) => {
   const [hover, setHover] = useState(false);
 
   const dispatch = useDispatch()
@@ -26,12 +26,12 @@ const ArrivalCard = ({ id ,img, title, isCollection }) => {
           className="img-fluid"
         />
       </div>
-      <div className={`content text-center ${isCollection ? "mb-5 mt-3" : "mb-3"}`}>
+      <div className={`content text-center ${isCollection ? "mb-5 mt-3" : "my-3"}`}>
         <h6 className="fw-normal">{title}</h6>
-        <span style={{ display: hover && !isCollection ? 'none' : 'block' }}>$300.00</span>
+        <span style={{ display: hover && !isCollection ? 'none' : 'block' }}>${price}</span>
       </div>
       {!isCollection && 
-        <button className="bg-transparent rounded-1 mx-auto w-100 py-2 mb-3 mt-2">
+        <button onClick={() => dispatch(addProductToCart(id))} className="bg-transparent rounded-1 mx-auto w-100 py-2 mb-3 mt-2">
           Quick Add
         </button>
       }

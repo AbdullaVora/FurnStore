@@ -5,21 +5,24 @@ import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { TiMinusOutline, TiPlusOutline } from "react-icons/ti";
 import { RiDeleteBin5Line } from "react-icons/ri";
-import { useState } from "react";
-import { removeProductFromCart } from "../redux/slice/CollectionSlice";
+import { useEffect, useState } from "react";
+import { removeProductFromCart, updateProductQuantity } from "../redux/slice/CollectionSlice";
 
 
-const Cart = ({ id, img, title }) => {
+const Cart = ({ id, img, title, price, quantity}) => {
     const dispatch = useDispatch();
 
-    const [quantity, setquantity] = useState(1);
-
     const handleinc = () => {
-        setquantity(quantity + 1);
+        console.log(quantity);
+        dispatch(updateProductQuantity({id: id, quantity: quantity + 1}))
     }
     const handledic = () => {
-        if (quantity > 1) setquantity(quantity - 1);
-        else dispatch(removeProductFromCart(id));
+        if (quantity > 1) {
+            dispatch(updateProductQuantity({id: id, quantity: quantity - 1}))
+        } else {
+            dispatch(removeProductFromCart(id));
+            dispatch(updateProductQuantity({id: id, quantity: 0}))
+        }
     }
     console.log(quantity);
 
@@ -29,8 +32,8 @@ const Cart = ({ id, img, title }) => {
             <div className="d-flex">
                 <img src={img} alt={title} className="img-fluid" style={{ width: '150px' }} />
                 <div className="mx-4 mt-2">
-                    <h6 className="fw-bold fs-6">{title}</h6>
-                    <span className="fw-bold">$300.00</span>
+                    <h6 className="fw-bold">{title}</h6>
+                    <span className="fw-bold">${price * quantity}</span>
                     <div className="quantity d-flex align-items-center mt-2">
                         <div className="dic" onClick={handledic}>
                             <TiMinusOutline style={{ cursor: 'pointer' }} size={20} />
@@ -52,13 +55,22 @@ const Cart = ({ id, img, title }) => {
 const CartBar = ({ openSlide, closeSideBar }) => {
     const cart = useSelector((state) => state.Collection.Cart);
 
+    const [total, setTotal] = useState(0);
+
     // Safely parse cart data
     const parsedCart = cart
         ? cart.map(item => JSON.parse(item)).flat()
         : [];
 
+    useEffect(() => {
+        let newTotal = 0;
+        parsedCart.forEach(item => (newTotal += item.price * item.quantity));
+        setTotal(newTotal);
+    }, [parsedCart]);
+
+
     return (
-        <div className="Cartbar">
+        <div className="Cartbar position-relative">
             <div
                 className={`slide position-fixed bg-white`}
                 style={{
@@ -81,7 +93,7 @@ const CartBar = ({ openSlide, closeSideBar }) => {
                 </div>
 
                 {/* Render Cart Items or Show Empty Message */}
-                <div className="d-flex flex-column py-1 align-items-center" style={{ maxHeight: "calc(100vh - 60px)", overflowY: "auto" }}>
+                <div className="d-flex flex-column py-1 align-items-center" style={{ maxHeight: "calc(80vh - 60px)", overflowY: "auto" }}>
                     {parsedCart.length === 0 ? (
                         <div className="emptyCart d-flex flex-column py-5 align-items-center">
                             <MdOutlineRemoveShoppingCart size={70} />
@@ -89,14 +101,18 @@ const CartBar = ({ openSlide, closeSideBar }) => {
                         </div>
                     ) : (
                         parsedCart.map((item, index) => (
-                            <Cart key={index} id={item.id} img={item.img} title={item.title} />
+                            <Cart key={index} id={item.id} img={item.img} price={item.price} quantity={item.quantity} title={item.title} />
 
                         ))
                     )}
                 </div>
-                <div className="cart mx-2">
-                    <button className="btn btn-dark fw-bold  mt-2 w-100 d-block">VIEW CART</button>
-                    <Link to="/collection" className="text-decoration-none"><button onClick={closeSideBar} className="btn cartbtn fw-bold btn-dark mt-2 w-100 d-block">ADD TO CART</button></Link> 
+                <div className="cart position-absolute translate-middle start-50 z-5 bg-white w-100 px-3" style={{ height: '220px', bottom: '-18%', boxShadow: '2px' }}>
+                    <div className="d-flex justify-content-between">
+                        <h6 className="fw-bold my-3 fs-6">TOTAL</h6>
+                        <h6 className="fw-bold my-3 fs-6">${total}</h6>
+                    </div>
+                    <Link to='/cart' className="text-decoration-none"><button className="btn btn-dark fw-bold  mt-2 w-100 d-block">VIEW CART</button></Link>
+                    <Link to="/collection" className="text-decoration-none"><button onClick={closeSideBar} className="btn cartbtn fw-bold btn-dark mt-2 w-100 d-block">ADD TO CART</button></Link>
                 </div>
             </div>
         </div>

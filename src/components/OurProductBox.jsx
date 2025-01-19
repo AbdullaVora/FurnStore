@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { RiStarSmileLine } from "react-icons/ri";
+import { useDispatch } from 'react-redux';
+import { addProductToCart } from '../redux/slice/CollectionSlice';
 
 
 
-const OurProductBox = ({ img, title, Cwidth }) => {
+const OurProductBox = ({ id, img, title, Cwidth }) => {
     const [hover, setHover] = useState(false);
+    const dispatch = useDispatch()
 
     const handleHover = () => setHover(!hover);
 
@@ -30,7 +33,7 @@ const OurProductBox = ({ img, title, Cwidth }) => {
                 <span>$300.00</span>
             </div>
             <div className="sideIcons">
-                <div className="cart">
+                <div className="cart" onClick={() => dispatch(addProductToCart(id))}>
                     <HiOutlineShoppingCart size={14} />
                 </div>
                 <div className="star">

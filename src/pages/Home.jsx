@@ -93,7 +93,7 @@ const Home = () => {
             <div className="sideCards col-8 d-flex flex-wrap">
               {
                 arrival.map((card, index) => (
-                  <ArrivalCard key={index} img={card.img} title={card.title} />
+                  <ArrivalCard key={index} id={card.id} img={card.img} price={card.price} title={card.title} />
                 ))
               }
             </div>
@@ -128,7 +128,7 @@ const Home = () => {
           <div className="product-cards d-flex flex-row flex-wrap">
             <div className="rightCards d-flex flex-wrap col-4 justify-content-evenly">
               {product.map((card, index) => (
-                <OurProductBox key={index} img={card.img} title={card.title} />
+                <OurProductBox key={index} id={card.id} img={card.img} title={card.title} />
               ))}
             </div>
             <div className="centerCard col-4" data-aos="zoom-in">
@@ -137,7 +137,7 @@ const Home = () => {
             </div>
             <div className="LeftCards d-flex flex-wrap col-4 justify-content-evenly">
               {product.map((card, index) => (
-                <OurProductBox key={index} img={card.img} title={card.title} />
+                <OurProductBox key={index} id={card.id} img={card.img} title={card.title} />
               ))}
             </div>
           </div>
