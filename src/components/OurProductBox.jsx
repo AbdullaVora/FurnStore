@@ -6,7 +6,7 @@ import { addProductToCart } from '../redux/slice/CollectionSlice';
 
 
 
-const OurProductBox = ({ id, img, title, Cwidth }) => {
+const OurProductBox = ({ id, img, title, Cwidth, price }) => {
     const [hover, setHover] = useState(false);
     const dispatch = useDispatch()
 
@@ -30,7 +30,7 @@ const OurProductBox = ({ id, img, title, Cwidth }) => {
             </div>
             <div className="content mt-3 mb-3 text-center">
                 <h6 className="fw-normal">{title}</h6>
-                <span>$300.00</span>
+                <span>${price}</span>
             </div>
             <div className="sideIcons">
                 <div className="cart" onClick={() => dispatch(addProductToCart(id))}>

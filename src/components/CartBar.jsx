@@ -111,7 +111,7 @@ const CartBar = ({ openSlide, closeSideBar }) => {
                         <h6 className="fw-bold my-3 fs-6">TOTAL</h6>
                         <h6 className="fw-bold my-3 fs-6">${total}</h6>
                     </div>
-                    <Link to='/cart' className="text-decoration-none"><button className="btn btn-dark fw-bold  mt-2 w-100 d-block">VIEW CART</button></Link>
+                    <Link to='/cart' className="text-decoration-none"><button className="btn btn-dark fw-bold  mt-2 w-100 d-block" onClick={closeSideBar}>VIEW CART</button></Link>
                     <Link to="/collection" className="text-decoration-none"><button onClick={closeSideBar} className="btn cartbtn fw-bold btn-dark mt-2 w-100 d-block">ADD TO CART</button></Link>
                 </div>
             </div>

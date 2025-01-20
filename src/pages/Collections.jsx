@@ -9,20 +9,28 @@ import DropDown from '../components/DropDown';
 const Collections = () => {
     const [collection, setCollection] = useState(true);
     const [isDropdownVisible, setDropdownVisible] = useState(false);
+    const [product, setProductData] = useState([]);
+    const [wishProduct, setwishProductData] = useState([]);
 
     const data = useSelector((state) => state.Collection.Collection);
-
-    const [product, setProductData] = useState()
-
+    const wishlist = useSelector((state) => state.Collection.WishList);
+    
+    // Update the product state whenever data changes
     useEffect(() => {
-        if (data)
-            setProductData(data.product)
-    }, [data])
+        if (data?.product) {
+            setProductData(data.product);
+        }
+        if (wishlist) {
+            setwishProductData(wishlist);
+        }
+    }, [data, wishlist]);
 
-    console.log(product);
+    console.log(wishProduct);
+    
+    
 
-    const DropdownEnter = () => { setDropdownVisible(true) };
-    const DropdownLeave = () => { setDropdownVisible(false) };
+    const DropdownEnter = () => setDropdownVisible(true);
+    const DropdownLeave = () => setDropdownVisible(false);
 
     return (
         <>
@@ -47,8 +55,11 @@ const Collections = () => {
                         <div className="row g-2">
                             <div
                                 className="col position-relative me-2 d-flex align-items-center justify-content-center text-center fw-medium py-2 bg-light"
-                                onMouseEnter={DropdownEnter} onMouseLeave={DropdownLeave}> AVAILABILITY <FaAngleDown className='ms-1' />
-                                {isDropdownVisible && <DropDown />} {/* Render DropDown if visible */}
+                                onMouseEnter={DropdownEnter}
+                                onMouseLeave={DropdownLeave}
+                            >
+                                AVAILABILITY <FaAngleDown className='ms-1' />
+                                {isDropdownVisible && <DropDown />}
                             </div>
                             <div className="col me-2 text-center fw-medium py-2 bg-light d-flex align-items-center justify-content-center">PRICE <FaAngleDown className='ms-1' /></div>
                             <div className="col-2 me-2 text-center fw-medium py-2 bg-light d-flex align-items-center justify-content-center">PRODUCT TYPE <FaAngleDown className='ms-1' /></div>
@@ -69,17 +80,20 @@ const Collections = () => {
             <div className="collectionCard">
                 <div className="container">
                     <div className="cards d-flex flex-wrap justify-content-between">
-                        {product?.map((card, index) => (
-                            <>
-                                <ArrivalCard key={index} img={card.img} id={card.id} title={card.title} price={card.price} isCollection={collection} />
-                            </>
-                        ))
-                        }
+                        {product.map((card) => (
+                            <ArrivalCard
+                                key={card.id}
+                                img={card.img}
+                                id={card.id}
+                                title={card.title}
+                                price={card.price}
+                                isCollection={collection}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
             {/* ****************************** Collection Card End ***************************** */}
-
         </>
     );
 };

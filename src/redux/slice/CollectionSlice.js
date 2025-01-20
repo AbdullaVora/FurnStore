@@ -81,7 +81,23 @@ import Home from "../../data/Home"
 const initialState = {
     Collection: Collection,
     Home: Home,
-    Cart: []
+    Cart: [],
+    WishList: []
+};
+
+const findProduct = (productId) => {
+    // Check each collection in order
+    const collections = [
+        Collection?.product || [],
+        Home?.arrival || [],
+        Home?.product || []
+    ];
+
+    for (const collection of collections) {
+        const found = collection.find(product => product.id === productId);
+        if (found) return found;
+    }
+    return null;
 };
 
 const CollectionSlice = createSlice({
@@ -89,11 +105,11 @@ const CollectionSlice = createSlice({
     initialState,
     reducers: {
         addProductToCart(state, action) {
-            // Find the product by ID
-            let product
-            product = Collection.product.find(product => product.id === action.payload);
-            product = Home.arrival.find(product => product.id === action.payload);
-            product = Home.product.find(product => product.id === action.payload);
+
+
+            // Find the product
+            const product = findProduct(action.payload);
+
             if (!product) {
                 console.error(`Product with ID ${action.payload} not found.`);
                 return;
@@ -146,9 +162,42 @@ const CollectionSlice = createSlice({
                     state.Cart[productIndex] = JSON.stringify(product); // Re-stringify it
                 }
             }
+        },
+        addToWishList(state, action) {
+            // Find the product by ID
+            const product = findProduct(action.payload);
+
+            if (!product) {
+                console.error(`Product with ID ${action.payload} not found.`);
+                return;
+            }
+
+            // Check if product already exists in the WishList
+            const existingItemIndex = state.WishList.findIndex(item => {
+                const parsedItem = JSON.parse(item); // Parse the JSON string
+                return parsedItem.id === action.payload; // Check if the IDs match
+            });
+
+            if (existingItemIndex === -1) {
+                console.log(product);
+                // If product doesn't exist in the WishList, add it
+                state.WishList.push(JSON.stringify(product)); // Add the product as a JSON string
+                console.log(state.WishList);
+            } else {
+                console.log(`Product with ID ${action.payload} is already in the WishList.`);
+            }
+
+        },
+        removeFromWishList(state, action) {
+            state.WishList = state.WishList.filter(product => {
+                const parsedProduct = JSON.parse(product); // Parse the JSON string
+                return parsedProduct.id !== action.payload; // Remove product if IDs match
+            });
+
         }
+
     }
 });
 
-export const { addProductToCart, removeProductFromCart, updateProductQuantity } = CollectionSlice.actions;
+export const { addProductToCart, removeProductFromCart, updateProductQuantity, addToWishList, removeFromWishList } = CollectionSlice.actions;
 export default CollectionSlice.reducer;

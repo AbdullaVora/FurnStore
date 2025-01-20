@@ -128,16 +128,16 @@ const Home = () => {
           <div className="product-cards d-flex flex-row flex-wrap">
             <div className="rightCards d-flex flex-wrap col-4 justify-content-evenly">
               {product.map((card, index) => (
-                <OurProductBox key={index} id={card.id} img={card.img} title={card.title} />
+                <OurProductBox key={index} id={card.id} img={card.img} price={card.price} title={card.title} />
               ))}
             </div>
             <div className="centerCard col-4" data-aos="zoom-in">
-              <OurProductBox img={'/images/product_5.jpg'} title={'Uiamond Halo Stud Cum'} Cwidth={'100%'} />
+              <OurProductBox img={'/images/product_5.jpg'} title={'Uiamond Halo Stud Cum'} price={1299} Cwidth={'100%'} />
               <button className='bg-transparent py-2 px-5 position-absolute start-50 translate-middle-x'>View All</button>
             </div>
             <div className="LeftCards d-flex flex-wrap col-4 justify-content-evenly">
               {product.map((card, index) => (
-                <OurProductBox key={index} id={card.id} img={card.img} title={card.title} />
+                <OurProductBox key={index} id={card.id} price={card.price} img={card.img} title={card.title} />
               ))}
             </div>
           </div>

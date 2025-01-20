@@ -104,19 +104,23 @@
     "product": [
         {   "id": 118,
             "img": "/images/product_1.jpg",
-            "title": "Diamond Halo Stud Sociss"
+            "title": "Diamond Halo Stud Sociss",
+            "price": 599
         },
         {   "id": 119,
             "img": "/images/product_2.jpg",
-            "title": "Diamond Halo Stud Magins"
+            "title": "Diamond Halo Stud Magins",
+            "price": 999
         },
         {   "id": 120,
             "img": "/images/product_3.jpg",
-            "title": "Diamond Halo Stud Quis"
+            "title": "Diamond Halo Stud Quis",
+            "price": 899
         },
         {   "id": 121,
             "img": "/images/product_4.jpg",
-            "title": "Diamond Halo Stud Massa"
+            "title": "Diamond Halo Stud Massa",
+            "price": 499
         }
     ],
     "flashDeals": [

@@ -37,8 +37,8 @@ const SideBar = ({ openSlide, closeSideBar }) => {
                     <Link to="/register" className="text-decoration-none text-black" onClick={closeSideBar}>
                         <li className="fs-5 py-3">Register</li>
                     </Link>
-                    <li className="fs-5 py-3">Wishlist</li>
-                    <li className="fs-5 py-3">Check out</li>
+                    <Link to="/wishlist" className="text-decoration-none text-black"><li onClick={closeSideBar} className="fs-5 py-3">Wishlist</li></Link>
+                    <Link to="/cart" className="text-decoration-none text-black"><li onClick={closeSideBar} className="fs-5 py-3">Check out</li></Link>
                     <li className="fs-5 py-3" onClick={handleLogout}>Log Out</li>
                 </ul>
                 <span className="px-4 fw-semibold d-block mb-2">CURRENCY</span>
