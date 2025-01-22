@@ -20,7 +20,7 @@ const Register = () => {
 
     const registerUser = async () => {
         try {
-            const response = await apiInstance.post('/register', input);
+            const response = await apiInstance.post('/api/user/register', input);
             console.log(response.status);
 
             if (response.status === 200) {

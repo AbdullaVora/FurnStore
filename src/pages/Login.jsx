@@ -23,7 +23,7 @@ const Login = () => {
 
     const loginUser = async () => {
         try {
-            const response = await apiInstance.post('/login', input);
+            const response = await apiInstance.post('/api/user/login', input);
             if (response.status === 200) {
                 toast.success('Login Success', { autoClose: 2000 });
                 localStorage.setItem('token', response.data.token);
