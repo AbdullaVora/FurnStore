@@ -119,12 +119,12 @@ const Home = () => {
       <div className="ourProducts py-5 mt-5" data-aos="fade-right">
         <div className="container">
           <h2 className='text-center display-5 fw-normal mb-5'>Our Products</h2>
-          <nav className='d-flex justify-content-center'>
+          {/* <nav className='d-flex justify-content-center'>
             <Link className='text-decoration-none px-4 opacity-75 py-2 p-nav'>HOT</Link>
             <Link className='text-decoration-none px-4 opacity-75 py-2 p-nav'>ARRIVALS</Link>
             <Link className='text-decoration-none px-4 opacity-75 py-2 p-nav'>TRENDING</Link>
             <Link className='text-decoration-none px-4 opacity-75 py-2 p-nav'>SALE OFF</Link>
-          </nav>
+          </nav> */}
           <div className="product-cards d-flex flex-row flex-wrap">
             <div className="rightCards d-flex flex-wrap col-4 justify-content-evenly">
               {product.map((card, index) => (
@@ -133,7 +133,7 @@ const Home = () => {
             </div>
             <div className="centerCard col-4" data-aos="zoom-in">
               <OurProductBox img={'/images/product_5.jpg'} title={'Uiamond Halo Stud Cum'} price={1299} Cwidth={'100%'} />
-              <button className='bg-transparent py-2 px-5 position-absolute start-50 translate-middle-x'>View All</button>
+              <Link to="/collection" className='text-decoration-none'><button className='bg-transparent py-2 px-5 position-absolute start-50 translate-middle-x'>View All</button></Link>
             </div>
             <div className="LeftCards d-flex flex-wrap col-4 justify-content-evenly">
               {product.map((card, index) => (
@@ -198,7 +198,7 @@ const Home = () => {
           >
             {flashDeals.map((flash, index) => (
               <SwiperSlide key={index}>
-                <FlahCard title={flash.title} img={flash.img} />
+                <FlahCard title={flash.title} price={flash.price} img={flash.img} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -251,7 +251,7 @@ const Home = () => {
                     <div className="box col-2 text-center mx-2 bg-light py-2 fs-3 fw-normal">00 <h5 className='fw-normal'>Minutes</h5></div>
                     <div className="box col-2 text-center mx-2 bg-light py-2 fs-3 fw-normal">00 <h5 className='fw-normal'>Seconds</h5></div>
                   </div>
-                  <button className='bg-transparent mt-5 py-2 px-4'>Shop Now</button>
+                  <Link to="/collection" className='text-decoration-none'></Link><button className='bg-transparent mt-5 py-2 px-4'>Shop Now</button>
                 </div>
               </div>
             </div>

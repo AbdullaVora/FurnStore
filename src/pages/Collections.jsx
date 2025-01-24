@@ -26,8 +26,6 @@ const Collections = () => {
     }, [data, wishlist]);
 
     console.log(wishProduct);
-    
-    
 
     const DropdownEnter = () => setDropdownVisible(true);
     const DropdownLeave = () => setDropdownVisible(false);
@@ -44,7 +42,7 @@ const Collections = () => {
             {/* ****************************** Banner End ***************************** */}
 
             {/* ****************************** Filter Start ***************************** */}
-            <div className="filterMain py-5 mt-5">
+            {/* <div className="filterMain py-5 mt-5">
                 <div className="container">
                     <div className="filter p-4">
                         <div className="pb-3 d-flex align-items-center">
@@ -73,11 +71,11 @@ const Collections = () => {
                         </button>
                     </div>
                 </div>
-            </div>
+            </div> */}
             {/* ****************************** Filter End ***************************** */}
 
             {/* ****************************** Collection Card Start ***************************** */}
-            <div className="collectionCard">
+            <div className="collectionCard mt-5">
                 <div className="container">
                     <div className="cards d-flex flex-wrap justify-content-between">
                         {product.map((card) => (

@@ -33,7 +33,7 @@ const Cart = ({ id, img, title, price, quantity}) => {
                 <img src={img} alt={title} className="img-fluid" style={{ width: '150px' }} />
                 <div className="mx-4 mt-2">
                     <h6 className="fw-bold">{title}</h6>
-                    <span className="fw-bold">${price * quantity}</span>
+                    <span className="fw-bold">${price * quantity}.00</span>
                     <div className="quantity d-flex align-items-center mt-2">
                         <div className="dic" onClick={handledic}>
                             <TiMinusOutline style={{ cursor: 'pointer' }} size={20} />
@@ -109,7 +109,7 @@ const CartBar = ({ openSlide, closeSideBar }) => {
                 <div className="cart position-absolute translate-middle start-50 z-5 bg-white w-100 px-3" style={{ height: '220px', bottom: '-18%', boxShadow: '2px' }}>
                     <div className="d-flex justify-content-between">
                         <h6 className="fw-bold my-3 fs-6">TOTAL</h6>
-                        <h6 className="fw-bold my-3 fs-6">${total}</h6>
+                        <h6 className="fw-bold my-3 fs-6">${total}.00</h6>
                     </div>
                     <Link to='/cart' className="text-decoration-none"><button className="btn btn-dark fw-bold  mt-2 w-100 d-block" onClick={closeSideBar}>VIEW CART</button></Link>
                     <Link to="/collection" className="text-decoration-none"><button onClick={closeSideBar} className="btn cartbtn fw-bold btn-dark mt-2 w-100 d-block">ADD TO CART</button></Link>

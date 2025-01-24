@@ -30,7 +30,7 @@ const OurProductBox = ({ id, img, title, Cwidth, price }) => {
             </div>
             <div className="content mt-3 mb-3 text-center">
                 <h6 className="fw-normal">{title}</h6>
-                <span>${price}</span>
+                <span>${price}.00</span>
             </div>
             <div className="sideIcons">
                 <div className="cart" onClick={() => dispatch(addProductToCart(id))}>

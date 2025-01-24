@@ -28,7 +28,7 @@ const ArrivalCard = ({ id, img, title, price, isCollection, iswish }) => {
       </div>
       <div className={`content text-center ${isCollection || iswish ? "mb-5 mt-3" : "my-3"}`}>
         <h6 className="fw-normal">{title}</h6>
-        <span style={{ display: hover && !isCollection || iswish ? 'none' : 'block' }}>${price}</span>
+        <span style={{ display: hover && !isCollection || iswish ? 'none' : 'block' }}>${price}.00</span>
       </div>
       {!isCollection && 
         <button onClick={() =>{iswish ? dispatch(removeFromWishList(id)) : dispatch(addProductToCart(id))}} className="bg-transparent rounded-1 mx-auto w-100 py-2 mb-3 mt-2">

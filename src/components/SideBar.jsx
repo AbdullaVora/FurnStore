@@ -41,7 +41,7 @@ const SideBar = ({ openSlide, closeSideBar }) => {
                     <Link to="/cart" className="text-decoration-none text-black"><li onClick={closeSideBar} className="fs-5 py-3">Check out</li></Link>
                     <li className="fs-5 py-3" onClick={handleLogout}>Log Out</li>
                 </ul>
-                <span className="px-4 fw-semibold d-block mb-2">CURRENCY</span>
+                {/* <span className="px-4 fw-semibold d-block mb-2">CURRENCY</span>
                 <select
                     className="mx-4 w-75 border-none outline-none p-2 fw-semibold mb-4"
                     style={{ backgroundColor: '#f1f1f1', fontSize: '12px' }}
@@ -59,7 +59,7 @@ const SideBar = ({ openSlide, closeSideBar }) => {
                 >
                     <option selected value="english">ENGLISH</option>
                     <option value="french">FRENCH</option>
-                </select>
+                </select> */}
             </div>
         </div>
     );

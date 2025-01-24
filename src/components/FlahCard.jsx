@@ -2,7 +2,7 @@ import React from 'react'
 import { HiOutlineShoppingCart } from 'react-icons/hi'
 import { RiStarSmileLine } from 'react-icons/ri'
 
-const FlahCard = ({ img, title }) => {
+const FlahCard = ({ img, title, price }) => {
     return (
         <>
             <div
@@ -19,7 +19,7 @@ const FlahCard = ({ img, title }) => {
                 </div>
                 <div className="content mt-3 text-center">
                     <h6 className="fw-normal">{title}</h6>
-                    <span>$300.00</span>
+                    <span>${price}.00</span>
                 </div>
                 {/* <button className="bg-transparent rounded-1 mx-auto w-100 py-2 mb-3 mt-2">
                     Quick Add

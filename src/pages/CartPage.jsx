@@ -45,10 +45,10 @@ const CartPage = () => {
                 <div className="cartTable">
                   <div className="row py-2 border-bottom" style={{ backgroundColor: '#f2f2f2', color: '#6b7280' }}>
                     <div className="col-md-5 fw-bold ps-5">Product</div>
-                    <div className="col-md-2 fw-bold" >Price</div>
-                    <div className="col-md-2 fw-bold">Quantity</div>
-                    <div className="col-md-1 fw-bold p-0">Subtotal</div>
-                    <div className="col-md-1 fw-bold ps-3">Remove</div>
+                    <div className="col-md-2 fw-bold ps-3" >Price</div>
+                    <div className="col-md-2 fw-bold ps-3">Quantity</div>
+                    <div className="col-md-1 fw-bold ps-3">Subtotal</div>
+                    <div className="col-md-1 fw-bold ps-5">Remove</div>
                   </div>
                   {parsedCart.map((item, index) => (
                     <div key={index} className="row align-items-center border-bottom ps-3 pb-3 mt-3">
@@ -69,16 +69,16 @@ const CartPage = () => {
                         </div>
                       </div>
                       <div className="col-md-1 ">
-                        <span>{item.price * item.quantity}</span>
+                        <span>${item.price * item.quantity}.00</span>
                       </div>
-                      <div className="col-md-2 ps-4">
+                      <div className="col-md-2 ps-5">
                         <span onClick={() => dispatch(removeProductFromCart(item.id))}><RiDeleteBin5Line size={26} /></span>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="border p-0" style={{ width: '32%', height: '100%' }}>
+              <div className="border p-0 position-relative" style={{ width: '32%', height: '100%' }}>
                 <div className="cartItems border-bottom" style={{ padding: '10px 0' }}>
                   <span style={{ fontSize: '12px', color: '#6b7280' }} className='fw-bold d-block px-3'>THERE ARE {cart.length} ITEMS IN YOUR CART</span>
                 </div>
@@ -99,6 +99,7 @@ const CartPage = () => {
                   <span className='fw-bold d-block my-3' style={{ fontSize: '14px' }}>Add a note to your order :</span>
                   <textarea name="note" id="note" cols={64} rows={7} className='border-0 p-2 fw-bold' style={{ fontSize: '10px' }} placeholder='ADD YOUR NOTE HERE'></textarea>
                 </div>
+              <button className='py-1 border-0 text-white fw-bold orderbtn my-2 position-absolute start-50 w-100 translate-middle-x'>PLACE ORDER</button>
               </div>
             </div>
           }

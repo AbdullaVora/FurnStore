@@ -126,27 +126,33 @@
     "flashDeals": [
         {
             "img": "/images/flash_1.jpg",
-            "title": "Acamode Halo Stud Conse"
+            "title": "Acamode Halo Stud Conse",
+            "price": 999
         },
         {
             "img": "/images/flash_2.jpg",
-            "title": "Diamond Halo Stud Donece"
+            "title": "Diamond Halo Stud Donece",
+            "price": 599
         },
         {
             "img": "/images/flash_3.jpg",
-            "title": "Acamode Halo Stud Monte"
+            "title": "Acamode Halo Stud Monte",
+            "price": 699
         },
         {
             "img": "/images/flash_4.jpg",
-            "title": "Acamode Halo Stud Conse"
+            "title": "Acamode Halo Stud Conse",
+            "price": 399
         },
         {
             "img": "/images/flash_5.jpg",
-            "title": "Acamode Halo Stud Donec"
+            "title": "Acamode Halo Stud Donec",
+            "price": 799
         },
         {
             "img": "/images/flash_6.jpg",
-            "title": "Acamode Halo Stud Conse"
+            "title": "Acamode Halo Stud Conse",
+            "price": 899
         }
     ],
     "news": [

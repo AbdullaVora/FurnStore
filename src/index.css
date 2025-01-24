@@ -548,12 +548,14 @@ textarea::placeholder {
 }
 
 .login button,
-.Cartbar button {
+.Cartbar button,
+.orderbtn {
   background-color: var(--secondary-color);
 }
 
 .login button:hover,
-.Cartbar button:hover {
+.Cartbar button:hover,
+.orderbtn:hover {
   background-color: #083e21;
 }
 

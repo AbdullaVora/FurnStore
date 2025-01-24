@@ -50,7 +50,7 @@ const Header = () => {
                         <Link to='/contact' className='px-4 py-2 text-decoration-none'>Contact Us</Link>
                     </nav>
                     <div className='icons d-flex'>
-                        <FiSearch size={38} className='me-2 rounded-3 p-2 iconHover' />
+                        {/* <FiSearch size={38} className='me-2 rounded-3 p-2 iconHover' /> */}
                         <FaRegUser size={38} className='me-2 rounded-3 p-2 iconHover' onClick={() => setSideBar(true)} />
                         <div className="wish position-relative">
                             <Link to="/wishlist" className='text-decoration-none text-black'><RiStarSmileLine size={38} className='me-2 rounded-3 p-2 iconHover' /></Link>
