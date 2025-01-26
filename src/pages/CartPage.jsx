@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from '../components/Footer'
 import { useDispatch, useSelector } from 'react-redux';
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { TiMinusOutline, TiPlusOutline } from 'react-icons/ti';
 import { removeProductFromCart, updateProductQuantity } from '../redux/slice/CollectionSlice';
 import { FaTruckFast } from "react-icons/fa6";
+import OrderPlacedPopup from '../components/OrderPlaced';
 
 
 
 const CartPage = () => {
 
+  const [orderDone, setOrderDone] = useState(false);
   const dispatch = useDispatch()
   const cart = useSelector((state) => state.Collection.Cart);
 
@@ -32,13 +34,18 @@ const CartPage = () => {
     }
   }
 
+  const orderPlace = () => {
+    setOrderDone(true);
+    setTimeout(() => setOrderDone(false), 1000);
+  }
+
   return (
     <>
-      <div className='wishlist py-5 border-bottom'>
+      <div className='wishlist py-5 border-bottom' style={{overflow: orderDone ? 'hidden' : '', pointerEvents: orderDone ? 'none' : 'auto'}}>
         <div className="container">
           <h2 className='text-center fw-bolder display-5 mt-5 mb-5'>YOUR SHOPPING CART</h2>
 
-          {parsedCart.length <= 0 ? <h2 className='fw-bold' style={{textAlign: 'center'}}>YOUR CART IS EMPTY</h2>
+          {parsedCart.length <= 0 ? <h2 className='fw-bold' style={{ textAlign: 'center' }}>YOUR CART IS EMPTY</h2>
             :
             <div className="row justify-content-between">
               <div className="border position-relative" style={{ marginRight: '1px', width: '65%', height: '100%' }}>
@@ -99,12 +106,14 @@ const CartPage = () => {
                   <span className='fw-bold d-block my-3' style={{ fontSize: '14px' }}>Add a note to your order :</span>
                   <textarea name="note" id="note" cols={64} rows={7} className='border-0 p-2 fw-bold' style={{ fontSize: '10px' }} placeholder='ADD YOUR NOTE HERE'></textarea>
                 </div>
-              <button className='py-1 border-0 text-white fw-bold orderbtn my-2 position-absolute start-50 w-100 translate-middle-x'>PLACE ORDER</button>
+                <button onClick={orderPlace} className='py-1 border-0 text-white fw-bold orderbtn my-2 position-absolute start-50 w-100 translate-middle-x'>PLACE ORDER</button>
               </div>
             </div>
           }
         </div>
       </div>
+      {orderDone && <OrderPlacedPopup />} {/* Show popup when orderDone is true */}
+
       <Footer />
     </>
   )

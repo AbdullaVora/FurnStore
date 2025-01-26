@@ -7,14 +7,33 @@ import ArrivalCard from '../components/ArrivalCard';
 import DropDown from '../components/DropDown';
 
 const Collections = () => {
+    const data = useSelector((state) => state.Collection.Collection);
     const [collection, setCollection] = useState(true);
     const [isDropdownVisible, setDropdownVisible] = useState(false);
     const [product, setProductData] = useState([]);
     const [wishProduct, setwishProductData] = useState([]);
 
-    const data = useSelector((state) => state.Collection.Collection);
+    const [filter, setFilter] = useState('');
+
+    useEffect(() => {
+        if (filter === 'a-z') {
+            setProductData([...product].sort((a, b) => (a.title && b.title ? a.title.localeCompare(b.title) : 0)));
+        } else if (filter === 'z-a') {
+            setProductData([...product].sort((a, b) => (a.title && b.title ? b.title.localeCompare(a.title) : 0)));
+        } else if (filter === 'price') {
+            setProductData([...product].sort((a, b) => (a.price && b.price ? a.price - b.price : 0)));
+        } else if (filter === 'price-reverse') {
+            setProductData([...product].sort((a, b) => (a.price && b.price ? b.price - a.price : 0)));
+        }
+    }, [filter]);
+
+    const ClearFilter = () => {
+        setFilter('');
+        setProductData(data?.product);
+    }
+
     const wishlist = useSelector((state) => state.Collection.WishList);
-    
+
     // Update the product state whenever data changes
     useEffect(() => {
         if (data?.product) {
@@ -42,36 +61,48 @@ const Collections = () => {
             {/* ****************************** Banner End ***************************** */}
 
             {/* ****************************** Filter Start ***************************** */}
-            {/* <div className="filterMain py-5 mt-5">
+            <div className="filterMain py-5 mt-5">
                 <div className="container">
                     <div className="filter p-4">
                         <div className="pb-3 d-flex align-items-center">
                             <HiMiniAdjustmentsHorizontal size={22} />
-                            <span className='fs-5 fw-bold ms-2'>FILTER BY</span>
+                            <span className="fs-5 fw-bold ms-2">FILTER BY</span>
                         </div>
                         <hr />
                         <div className="row g-2">
                             <div
-                                className="col position-relative me-2 d-flex align-items-center justify-content-center text-center fw-medium py-2 bg-light"
-                                onMouseEnter={DropdownEnter}
-                                onMouseLeave={DropdownLeave}
+                                className="col me-2 text-center fw-medium py-2 bg-light d-flex align-items-center justify-content-center"
+                                onClick={() => setFilter('a-z')}
                             >
-                                AVAILABILITY <FaAngleDown className='ms-1' />
-                                {isDropdownVisible && <DropDown />}
+                                SORT A-Z
                             </div>
-                            <div className="col me-2 text-center fw-medium py-2 bg-light d-flex align-items-center justify-content-center">PRICE <FaAngleDown className='ms-1' /></div>
-                            <div className="col-2 me-2 text-center fw-medium py-2 bg-light d-flex align-items-center justify-content-center">PRODUCT TYPE <FaAngleDown className='ms-1' /></div>
-                            <div className="col me-2 text-center fw-medium py-2 bg-light d-flex align-items-center justify-content-center">BRAND <FaAngleDown className='ms-1' /></div>
-                            <div className="col me-2 text-center fw-medium py-2 bg-light d-flex align-items-center justify-content-center">COLOR <FaAngleDown className='ms-1' /></div>
-                            <div className="col text-center fw-medium py-2 bg-light d-flex align-items-center justify-content-center">SIZE <FaAngleDown className='ms-1' /></div>
+                            <div
+                                className="col me-2 text-center fw-medium py-2 bg-light d-flex align-items-center justify-content-center"
+                                onClick={() => setFilter('z-a')}
+                            >
+                                SORT Z-A
+                            </div>
+                            <div
+                                className="col me-2 text-center fw-medium py-2 bg-light d-flex align-items-center justify-content-center"
+                                onClick={() => setFilter('price')}
+                            >
+                                SORT BY PRICE
+                            </div>
+                            <div
+                                className="col me-2 text-center fw-medium py-2 bg-light d-flex align-items-center justify-content-center"
+                                onClick={() => setFilter('price-reverse')}
+                            >
+                                SORT BY PRICE REVERSE
+                            </div>
                         </div>
-                        <button className="btn btn-dark d-flex align-items-center mt-3">
+                        <button onClick={() => ClearFilter()} className="btn btn-dark d-flex align-items-center mt-3" >
                             <RiDeleteBin5Line size={22} />
-                            <span className='ps-1 pt-1'>CLEAR ALL</span>
+                            <span className="ps-1 pt-1">CLEAR ALL</span>
                         </button>
                     </div>
                 </div>
-            </div> */}
+            </div>
+
             {/* ****************************** Filter End ***************************** */}
 
             {/* ****************************** Collection Card Start ***************************** */}
